@@ -301,6 +301,27 @@ audio {
   text-align: center;
 }
 
+/* ── LETTER GRID (Listening A — solo letras, sin texto de alternativas) ── */
+.letter-grid { display: flex; gap: 12px; justify-content: center; margin-top: 4px; }
+.letter-btn {
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  width: 58px;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1.2em;
+  color: var(--muted);
+  cursor: pointer;
+  background: white;
+  transition: all 0.15s;
+}
+.letter-btn input { display: none; }
+.letter-btn:hover { border-color: var(--primary-light); }
+.letter-btn:has(input:checked) { border-color: var(--primary); background: var(--primary); color: white; }
+
 /* ── MC OPTIONS (label wraps input — Rule 8) ── */
 .mc-grid { display: flex; flex-direction: column; gap: 8px; }
 .mc-option {
@@ -818,11 +839,11 @@ audio {
         <div class="photo-card" id="mc-la1">
           <div class="photo-num">Picture 1</div>
           <img src="https://github.com/Moncholate/INI5131-Midterm-Written-Mock-Test/raw/refs/heads/main/Picture%201.jfif" alt="Office desk with a printer and four labeled document trays in a row">
-          <div class="mc-grid">
-            <label class="mc-option"><input type="radio" name="la1" value="A" onchange="saveAll()"><span>a) The Bills of Lading tray is next to the printer.</span></label>
-            <label class="mc-option"><input type="radio" name="la1" value="B" onchange="saveAll()"><span>b) The Bills of Lading tray is between the Invoices tray and the Packing Lists tray.</span></label>
-            <label class="mc-option"><input type="radio" name="la1" value="C" onchange="saveAll()"><span>c) The Bills of Lading tray is on the right corner of the desk.</span></label>
-            <label class="mc-option"><input type="radio" name="la1" value="D" onchange="saveAll()"><span>d) The Bills of Lading tray is next to the Certificates of Origin tray.</span></label>
+          <div class="letter-grid">
+            <label class="letter-btn"><input type="radio" name="la1" value="A" onchange="saveAll()">A</label>
+            <label class="letter-btn"><input type="radio" name="la1" value="B" onchange="saveAll()">B</label>
+            <label class="letter-btn"><input type="radio" name="la1" value="C" onchange="saveAll()">C</label>
+            <label class="letter-btn"><input type="radio" name="la1" value="D" onchange="saveAll()">D</label>
           </div>
         </div>
 
@@ -830,11 +851,11 @@ audio {
         <div class="photo-card" id="mc-la2">
           <div class="photo-num">Picture 2</div>
           <img src="https://github.com/Moncholate/INI5131-Midterm-Written-Mock-Test/raw/refs/heads/main/Picture%202.jfif" alt="Two employees on a video call with a supplier">
-          <div class="mc-grid">
-            <label class="mc-option"><input type="radio" name="la2" value="A" onchange="saveAll()"><span>a) They were talking to a supplier on a video call.</span></label>
-            <label class="mc-option"><input type="radio" name="la2" value="B" onchange="saveAll()"><span>b) They were signing a shipping contract.</span></label>
-            <label class="mc-option"><input type="radio" name="la2" value="C" onchange="saveAll()"><span>c) They were reviewing sales reports.</span></label>
-            <label class="mc-option"><input type="radio" name="la2" value="D" onchange="saveAll()"><span>d) They were training new employees.</span></label>
+          <div class="letter-grid">
+            <label class="letter-btn"><input type="radio" name="la2" value="A" onchange="saveAll()">A</label>
+            <label class="letter-btn"><input type="radio" name="la2" value="B" onchange="saveAll()">B</label>
+            <label class="letter-btn"><input type="radio" name="la2" value="C" onchange="saveAll()">C</label>
+            <label class="letter-btn"><input type="radio" name="la2" value="D" onchange="saveAll()">D</label>
           </div>
         </div>
 
@@ -842,11 +863,11 @@ audio {
         <div class="photo-card" id="mc-la3">
           <div class="photo-num">Picture 3</div>
           <img src="https://github.com/Moncholate/INI5131-Midterm-Written-Mock-Test/raw/refs/heads/main/Picture%203.jfif" alt="Airport departure board with foggy weather visible through the window">
-          <div class="mc-grid">
-            <label class="mc-option"><input type="radio" name="la3" value="A" onchange="saveAll()"><span>a) The flight will leave on time.</span></label>
-            <label class="mc-option"><input type="radio" name="la3" value="B" onchange="saveAll()"><span>b) The flight will be delayed.</span></label>
-            <label class="mc-option"><input type="radio" name="la3" value="C" onchange="saveAll()"><span>c) The airport will close early.</span></label>
-            <label class="mc-option"><input type="radio" name="la3" value="D" onchange="saveAll()"><span>d) The passengers will arrive today.</span></label>
+          <div class="letter-grid">
+            <label class="letter-btn"><input type="radio" name="la3" value="A" onchange="saveAll()">A</label>
+            <label class="letter-btn"><input type="radio" name="la3" value="B" onchange="saveAll()">B</label>
+            <label class="letter-btn"><input type="radio" name="la3" value="C" onchange="saveAll()">C</label>
+            <label class="letter-btn"><input type="radio" name="la3" value="D" onchange="saveAll()">D</label>
           </div>
         </div>
 
@@ -854,11 +875,11 @@ audio {
         <div class="photo-card" id="mc-la4">
           <div class="photo-num">Picture 4</div>
           <img src="https://github.com/Moncholate/INI5131-Midterm-Written-Mock-Test/raw/refs/heads/main/Picture%204.jfif" alt="Team celebrating a new product launch in an office">
-          <div class="mc-grid">
-            <label class="mc-option"><input type="radio" name="la4" value="A" onchange="saveAll()"><span>a) They trained new sales representatives.</span></label>
-            <label class="mc-option"><input type="radio" name="la4" value="B" onchange="saveAll()"><span>b) They visited a foreign factory.</span></label>
-            <label class="mc-option"><input type="radio" name="la4" value="C" onchange="saveAll()"><span>c) They opened a new branch office.</span></label>
-            <label class="mc-option"><input type="radio" name="la4" value="D" onchange="saveAll()"><span>d) They launched a new product line last month.</span></label>
+          <div class="letter-grid">
+            <label class="letter-btn"><input type="radio" name="la4" value="A" onchange="saveAll()">A</label>
+            <label class="letter-btn"><input type="radio" name="la4" value="B" onchange="saveAll()">B</label>
+            <label class="letter-btn"><input type="radio" name="la4" value="C" onchange="saveAll()">C</label>
+            <label class="letter-btn"><input type="radio" name="la4" value="D" onchange="saveAll()">D</label>
           </div>
         </div>
 
@@ -866,11 +887,11 @@ audio {
         <div class="photo-card" id="mc-la5">
           <div class="photo-num">Picture 5</div>
           <img src="https://github.com/Moncholate/INI5131-Midterm-Written-Mock-Test/raw/refs/heads/main/Picture%205.jfif" alt="Trade fair exhibition hall with company booths">
-          <div class="mc-grid">
-            <label class="mc-option"><input type="radio" name="la5" value="A" onchange="saveAll()"><span>a) This is the place where officials inspect containers.</span></label>
-            <label class="mc-option"><input type="radio" name="la5" value="B" onchange="saveAll()"><span>b) This is the place where companies showcase their products to buyers.</span></label>
-            <label class="mc-option"><input type="radio" name="la5" value="C" onchange="saveAll()"><span>c) This is the place where workers pack export orders.</span></label>
-            <label class="mc-option"><input type="radio" name="la5" value="D" onchange="saveAll()"><span>d) This is the place where employees have lunch.</span></label>
+          <div class="letter-grid">
+            <label class="letter-btn"><input type="radio" name="la5" value="A" onchange="saveAll()">A</label>
+            <label class="letter-btn"><input type="radio" name="la5" value="B" onchange="saveAll()">B</label>
+            <label class="letter-btn"><input type="radio" name="la5" value="C" onchange="saveAll()">C</label>
+            <label class="letter-btn"><input type="radio" name="la5" value="D" onchange="saveAll()">D</label>
           </div>
         </div>
 
@@ -976,7 +997,7 @@ audio {
         </div>
 
         <div class="reading-text-box">
-          GlobalCargo Logistics is going to open a new distribution <span class="blank-tag">______ (1)</span> in Concepción next month. Coordinating the move has been complicated, especially with strict transportation permits, but the team remains optimistic about the results. <span class="blank-tag">______ (2)</span> from different branches are relocating to help launch operations smoothly. The company is also going to organize training sessions to prepare new local hires for their roles. Building a strong <span class="blank-tag">______ (3)</span> with local <span class="blank-tag">______ (4)</span> is a top priority for the branch manager. Arranging delivery <span class="blank-tag">______ (5)</span> has been especially demanding this month due to the transportation permits. In the long run, this expansion aims to <span class="blank-tag">______ (6)</span> the company's position in the southern region.
+          GlobalCargo Logistics is going to open a new distribution <span class="blank-tag">(1)</span> in Concepción next month. Coordinating the move has been complicated, especially with strict transportation permits, but the team remains optimistic about the results. <span class="blank-tag">(2)</span> from different branches are relocating to help launch operations smoothly. The company is also going to organize training sessions to prepare new local hires for their roles. Building a strong <span class="blank-tag">(3)</span> with local <span class="blank-tag">(4)</span> is a top priority for the branch manager. Arranging delivery <span class="blank-tag">(5)</span> has been especially demanding this month due to the transportation permits. In the long run, this expansion aims to <span class="blank-tag">(6)</span> the company's position in the southern region.
         </div>
 
         <div class="cloze-row" id="ra-row-1">
