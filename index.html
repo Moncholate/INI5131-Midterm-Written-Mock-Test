@@ -1087,6 +1087,15 @@ audio {
         <button class="gemini-btn" onclick="copyForGemini('rb')">🤖 Consultar con Gemini</button>
         <div class="gemini-warn" id="geminiWarnRB">⚠️ <span>Debes responder al menos una pregunta de Reading Parte B antes de consultar con Gemini.</span></div>
 
+        <div class="gemini-block">
+          <h4>📥 Ingresa aquí los puntajes que te dio Gemini</h4>
+          <p class="hint">Copia los puntajes del Bloque 2 de la respuesta de Gemini en los siguientes campos. Tu nota se actualizará sola.</p>
+          <div class="gr-row"><label>Pregunta 1 (máx. 1 pt)</label><input type="number" min="0" max="1" step="0.5" id="gr_rb_q1" oninput="saveAll();maybeRecalc()"></div>
+          <div class="gr-row"><label>Pregunta 2 (máx. 1 pt)</label><input type="number" min="0" max="1" step="0.5" id="gr_rb_q2" oninput="saveAll();maybeRecalc()"></div>
+          <div class="gr-row"><label>Pregunta 3 (máx. 2 pts)</label><input type="number" min="0" max="2" step="0.5" id="gr_rb_q3" oninput="saveAll();maybeRecalc()"></div>
+          <div class="gr-row"><label>Pregunta 4 (máx. 2 pts)</label><input type="number" min="0" max="2" step="0.5" id="gr_rb_q4" oninput="saveAll();maybeRecalc()"></div>
+        </div>
+
       </div>
     </div>
 
@@ -1136,44 +1145,44 @@ audio {
           <div class="criterion">
             <h4>1. Coherencia y Extensión (4 pts)</h4>
             <div class="criterion-options">
-              <label><input type="radio" name="rub1" value="4" onchange="updateRubric();saveAll()"><div><div class="rub-level">Totalmente Logrado <span class="rub-pts">4 pts</span></div><div class="rub-desc">80 palabras o más. Al menos 6 ideas completas, detalladas y coherentes con el estímulo.</div></div><span class="check-icon">✓</span></label>
-              <label><input type="radio" name="rub1" value="3.2" onchange="updateRubric();saveAll()"><div><div class="rub-level">Logrado <span class="rub-pts">3,2 pts</span></div><div class="rub-desc">60–79 palabras. Al menos 5 ideas completas y coherentes.</div></div><span class="check-icon">✓</span></label>
-              <label><input type="radio" name="rub1" value="2.4" onchange="updateRubric();saveAll()"><div><div class="rub-level">Parcialmente Logrado <span class="rub-pts">2,4 pts</span></div><div class="rub-desc">40–59 palabras. Al menos 4 ideas completas y coherentes.</div></div><span class="check-icon">✓</span></label>
-              <label><input type="radio" name="rub1" value="1.2" onchange="updateRubric();saveAll()"><div><div class="rub-level">Insuficientemente Logrado <span class="rub-pts">1,2 pts</span></div><div class="rub-desc">30–39 palabras. Entre 2 y 3 ideas completas.</div></div><span class="check-icon">✓</span></label>
-              <label><input type="radio" name="rub1" value="0" onchange="updateRubric();saveAll()"><div><div class="rub-level">No Logrado <span class="rub-pts">0 pts</span></div><div class="rub-desc">No hay respuesta o menos de 30 palabras.</div></div><span class="check-icon">✓</span></label>
+              <label><input type="radio" name="rub1" value="4" onchange="updateRubric();saveAll();maybeRecalc()"><div><div class="rub-level">Totalmente Logrado <span class="rub-pts">4 pts</span></div><div class="rub-desc">80 palabras o más. Al menos 6 ideas completas, detalladas y coherentes con el estímulo.</div></div><span class="check-icon">✓</span></label>
+              <label><input type="radio" name="rub1" value="3.2" onchange="updateRubric();saveAll();maybeRecalc()"><div><div class="rub-level">Logrado <span class="rub-pts">3,2 pts</span></div><div class="rub-desc">60–79 palabras. Al menos 5 ideas completas y coherentes.</div></div><span class="check-icon">✓</span></label>
+              <label><input type="radio" name="rub1" value="2.4" onchange="updateRubric();saveAll();maybeRecalc()"><div><div class="rub-level">Parcialmente Logrado <span class="rub-pts">2,4 pts</span></div><div class="rub-desc">40–59 palabras. Al menos 4 ideas completas y coherentes.</div></div><span class="check-icon">✓</span></label>
+              <label><input type="radio" name="rub1" value="1.2" onchange="updateRubric();saveAll();maybeRecalc()"><div><div class="rub-level">Insuficientemente Logrado <span class="rub-pts">1,2 pts</span></div><div class="rub-desc">30–39 palabras. Entre 2 y 3 ideas completas.</div></div><span class="check-icon">✓</span></label>
+              <label><input type="radio" name="rub1" value="0" onchange="updateRubric();saveAll();maybeRecalc()"><div><div class="rub-level">No Logrado <span class="rub-pts">0 pts</span></div><div class="rub-desc">No hay respuesta o menos de 30 palabras.</div></div><span class="check-icon">✓</span></label>
             </div>
           </div>
 
           <div class="criterion">
             <h4>2. Vocabulario (3 pts)</h4>
             <div class="criterion-options">
-              <label><input type="radio" name="rub2" value="3" onchange="updateRubric();saveAll()"><div><div class="rub-level">Totalmente Logrado <span class="rub-pts">3 pts</span></div><div class="rub-desc">8 o más palabras del vocabulario estudiado, en contextos adecuados.</div></div><span class="check-icon">✓</span></label>
-              <label><input type="radio" name="rub2" value="2.4" onchange="updateRubric();saveAll()"><div><div class="rub-level">Logrado <span class="rub-pts">2,4 pts</span></div><div class="rub-desc">6 o 7 palabras del vocabulario estudiado.</div></div><span class="check-icon">✓</span></label>
-              <label><input type="radio" name="rub2" value="1.8" onchange="updateRubric();saveAll()"><div><div class="rub-level">Parcialmente Logrado <span class="rub-pts">1,8 pts</span></div><div class="rub-desc">4 o 5 palabras del vocabulario estudiado.</div></div><span class="check-icon">✓</span></label>
-              <label><input type="radio" name="rub2" value="0.9" onchange="updateRubric();saveAll()"><div><div class="rub-level">Insuficientemente Logrado <span class="rub-pts">0,9 pts</span></div><div class="rub-desc">Al menos 3 palabras del vocabulario estudiado.</div></div><span class="check-icon">✓</span></label>
-              <label><input type="radio" name="rub2" value="0" onchange="updateRubric();saveAll()"><div><div class="rub-level">No Logrado <span class="rub-pts">0 pts</span></div><div class="rub-desc">No responde o usa menos de 2 palabras del vocabulario estudiado.</div></div><span class="check-icon">✓</span></label>
+              <label><input type="radio" name="rub2" value="3" onchange="updateRubric();saveAll();maybeRecalc()"><div><div class="rub-level">Totalmente Logrado <span class="rub-pts">3 pts</span></div><div class="rub-desc">8 o más palabras del vocabulario estudiado, en contextos adecuados.</div></div><span class="check-icon">✓</span></label>
+              <label><input type="radio" name="rub2" value="2.4" onchange="updateRubric();saveAll();maybeRecalc()"><div><div class="rub-level">Logrado <span class="rub-pts">2,4 pts</span></div><div class="rub-desc">6 o 7 palabras del vocabulario estudiado.</div></div><span class="check-icon">✓</span></label>
+              <label><input type="radio" name="rub2" value="1.8" onchange="updateRubric();saveAll();maybeRecalc()"><div><div class="rub-level">Parcialmente Logrado <span class="rub-pts">1,8 pts</span></div><div class="rub-desc">4 o 5 palabras del vocabulario estudiado.</div></div><span class="check-icon">✓</span></label>
+              <label><input type="radio" name="rub2" value="0.9" onchange="updateRubric();saveAll();maybeRecalc()"><div><div class="rub-level">Insuficientemente Logrado <span class="rub-pts">0,9 pts</span></div><div class="rub-desc">Al menos 3 palabras del vocabulario estudiado.</div></div><span class="check-icon">✓</span></label>
+              <label><input type="radio" name="rub2" value="0" onchange="updateRubric();saveAll();maybeRecalc()"><div><div class="rub-level">No Logrado <span class="rub-pts">0 pts</span></div><div class="rub-desc">No responde o usa menos de 2 palabras del vocabulario estudiado.</div></div><span class="check-icon">✓</span></label>
             </div>
           </div>
 
           <div class="criterion">
             <h4>3. Gramática (3 pts)</h4>
             <div class="criterion-options">
-              <label><input type="radio" name="rub3" value="3" onchange="updateRubric();saveAll()"><div><div class="rub-level">Totalmente Logrado <span class="rub-pts">3 pts</span></div><div class="rub-desc">Sin errores gramaticales en la conjugación ni estructura de oraciones.</div></div><span class="check-icon">✓</span></label>
-              <label><input type="radio" name="rub3" value="2.4" onchange="updateRubric();saveAll()"><div><div class="rub-level">Logrado <span class="rub-pts">2,4 pts</span></div><div class="rub-desc">2 a 3 errores que no afectan la comprensión.</div></div><span class="check-icon">✓</span></label>
-              <label><input type="radio" name="rub3" value="1.8" onchange="updateRubric();saveAll()"><div><div class="rub-level">Parcialmente Logrado <span class="rub-pts">1,8 pts</span></div><div class="rub-desc">4 a 5 errores; el texto sigue siendo comprensible.</div></div><span class="check-icon">✓</span></label>
-              <label><input type="radio" name="rub3" value="0.9" onchange="updateRubric();saveAll()"><div><div class="rub-level">Insuficientemente Logrado <span class="rub-pts">0,9 pts</span></div><div class="rub-desc">Hasta 6 errores que dificultan la claridad del mensaje.</div></div><span class="check-icon">✓</span></label>
-              <label><input type="radio" name="rub3" value="0" onchange="updateRubric();saveAll()"><div><div class="rub-level">No Logrado <span class="rub-pts">0 pts</span></div><div class="rub-desc">No hay respuesta o 7 o más errores que impiden la comprensión.</div></div><span class="check-icon">✓</span></label>
+              <label><input type="radio" name="rub3" value="3" onchange="updateRubric();saveAll();maybeRecalc()"><div><div class="rub-level">Totalmente Logrado <span class="rub-pts">3 pts</span></div><div class="rub-desc">Sin errores gramaticales en la conjugación ni estructura de oraciones.</div></div><span class="check-icon">✓</span></label>
+              <label><input type="radio" name="rub3" value="2.4" onchange="updateRubric();saveAll();maybeRecalc()"><div><div class="rub-level">Logrado <span class="rub-pts">2,4 pts</span></div><div class="rub-desc">2 a 3 errores que no afectan la comprensión.</div></div><span class="check-icon">✓</span></label>
+              <label><input type="radio" name="rub3" value="1.8" onchange="updateRubric();saveAll();maybeRecalc()"><div><div class="rub-level">Parcialmente Logrado <span class="rub-pts">1,8 pts</span></div><div class="rub-desc">4 a 5 errores; el texto sigue siendo comprensible.</div></div><span class="check-icon">✓</span></label>
+              <label><input type="radio" name="rub3" value="0.9" onchange="updateRubric();saveAll();maybeRecalc()"><div><div class="rub-level">Insuficientemente Logrado <span class="rub-pts">0,9 pts</span></div><div class="rub-desc">Hasta 6 errores que dificultan la claridad del mensaje.</div></div><span class="check-icon">✓</span></label>
+              <label><input type="radio" name="rub3" value="0" onchange="updateRubric();saveAll();maybeRecalc()"><div><div class="rub-level">No Logrado <span class="rub-pts">0 pts</span></div><div class="rub-desc">No hay respuesta o 7 o más errores que impiden la comprensión.</div></div><span class="check-icon">✓</span></label>
             </div>
           </div>
 
           <div class="criterion">
             <h4>4. Ortografía (2 pts)</h4>
             <div class="criterion-options">
-              <label><input type="radio" name="rub4" value="2" onchange="updateRubric();saveAll()"><div><div class="rub-level">Totalmente Logrado <span class="rub-pts">2 pts</span></div><div class="rub-desc">1 o 2 errores ortográficos que no afectan el mensaje.</div></div><span class="check-icon">✓</span></label>
-              <label><input type="radio" name="rub4" value="1.6" onchange="updateRubric();saveAll()"><div><div class="rub-level">Logrado <span class="rub-pts">1,6 pts</span></div><div class="rub-desc">3 o 4 errores que no afectan en general el mensaje.</div></div><span class="check-icon">✓</span></label>
-              <label><input type="radio" name="rub4" value="1.2" onchange="updateRubric();saveAll()"><div><div class="rub-level">Parcialmente Logrado <span class="rub-pts">1,2 pts</span></div><div class="rub-desc">5 o 6 errores que afectan parcialmente el mensaje.</div></div><span class="check-icon">✓</span></label>
-              <label><input type="radio" name="rub4" value="0.6" onchange="updateRubric();saveAll()"><div><div class="rub-level">Insuficientemente Logrado <span class="rub-pts">0,6 pts</span></div><div class="rub-desc">7 a 9 errores que afectan la idea principal.</div></div><span class="check-icon">✓</span></label>
-              <label><input type="radio" name="rub4" value="0" onchange="updateRubric();saveAll()"><div><div class="rub-level">No Logrado <span class="rub-pts">0 pts</span></div><div class="rub-desc">No hay respuesta o más de 10 errores que afectan la comprensión.</div></div><span class="check-icon">✓</span></label>
+              <label><input type="radio" name="rub4" value="2" onchange="updateRubric();saveAll();maybeRecalc()"><div><div class="rub-level">Totalmente Logrado <span class="rub-pts">2 pts</span></div><div class="rub-desc">1 o 2 errores ortográficos que no afectan el mensaje.</div></div><span class="check-icon">✓</span></label>
+              <label><input type="radio" name="rub4" value="1.6" onchange="updateRubric();saveAll();maybeRecalc()"><div><div class="rub-level">Logrado <span class="rub-pts">1,6 pts</span></div><div class="rub-desc">3 o 4 errores que no afectan en general el mensaje.</div></div><span class="check-icon">✓</span></label>
+              <label><input type="radio" name="rub4" value="1.2" onchange="updateRubric();saveAll();maybeRecalc()"><div><div class="rub-level">Parcialmente Logrado <span class="rub-pts">1,2 pts</span></div><div class="rub-desc">5 o 6 errores que afectan parcialmente el mensaje.</div></div><span class="check-icon">✓</span></label>
+              <label><input type="radio" name="rub4" value="0.6" onchange="updateRubric();saveAll();maybeRecalc()"><div><div class="rub-level">Insuficientemente Logrado <span class="rub-pts">0,6 pts</span></div><div class="rub-desc">7 a 9 errores que afectan la idea principal.</div></div><span class="check-icon">✓</span></label>
+              <label><input type="radio" name="rub4" value="0" onchange="updateRubric();saveAll();maybeRecalc()"><div><div class="rub-level">No Logrado <span class="rub-pts">0 pts</span></div><div class="rub-desc">No hay respuesta o más de 10 errores que afectan la comprensión.</div></div><span class="check-icon">✓</span></label>
             </div>
           </div>
 
@@ -1207,24 +1216,11 @@ audio {
 
       <!-- Partial feedback bar (visible until Gemini review complete) -->
       <div class="partial-feedback-bar" id="partialBar" style="display:none;">
-        <p>⏳ <strong>Retroalimentación completa pendiente.</strong> Completa la revisión con Gemini de Reading Parte B y la rúbrica de Writing, luego haz clic en "Actualizar nota".</p>
-        <button id="partialBtn" onclick="togglePartialFeedback()">👁 Ver retroalimentación parcial</button>
+        <p>⏳ <strong>Listening y Reading Parte A ya están corregidos abajo.</strong> Reading Parte B queda pendiente hasta que completes la revisión con Gemini y hagas clic en "Actualizar nota".</p>
       </div>
 
-      <!-- Gemini correction block -->
-      <div class="gemini-block" id="geminiBlock" style="display:none;">
-        <h4>🤖 Revisión con Gemini — Reading Parte B</h4>
-        <p class="hint">Usa el botón "Consultar con Gemini" de Reading Parte B, pega tus respuestas, copia los puntajes sugeridos (Bloque 2) aquí abajo, y luego haz clic en "Actualizar nota".</p>
-        <div class="gr-row"><label>Pregunta 1 (máx. 1 pt)</label><input type="number" min="0" max="1" step="0.5" id="gr_rb_q1" onchange="syncGr('rb_q1', this.value)"></div>
-        <div class="gr-row"><label>Pregunta 2 (máx. 1 pt)</label><input type="number" min="0" max="1" step="0.5" id="gr_rb_q2" onchange="syncGr('rb_q2', this.value)"></div>
-        <div class="gr-row"><label>Pregunta 3 (máx. 2 pts)</label><input type="number" min="0" max="2" step="0.5" id="gr_rb_q3" onchange="syncGr('rb_q3', this.value)"></div>
-        <div class="gr-row"><label>Pregunta 4 (máx. 2 pts)</label><input type="number" min="0" max="2" step="0.5" id="gr_rb_q4" onchange="syncGr('rb_q4', this.value)"></div>
-        <button class="calculate-btn" style="margin-top:16px;" onclick="updateWithGeminiScores()">✅ Actualizar nota</button>
-      </div>
-
-      <div class="gemini-done-banner" id="geminiDoneBanner" style="display:none;">
-        ✅ <strong>Revisión con Gemini completada.</strong> Tu nota ya incluye los puntajes de Reading Parte B y la rúbrica de Writing.
-      </div>
+      <!-- Gemini score inputs now live inline under Reading B and under the Writing rubric —
+           this space intentionally left without a duplicate entry block. -->
 
       <!-- Filter tabs -->
       <div class="filter-tabs" id="filterTabs" style="display:none;">
@@ -1589,12 +1585,13 @@ function closeModal(id) {
 }
 
 /* ============================================================
-   SYNC — Gemini block inputs → DOM reales (Reading B)
+   RECÁLCULO EN VIVO — si los resultados ya están visibles, cualquier
+   cambio en los puntajes de Gemini o la rúbrica actualiza la nota sola.
 ============================================================ */
-function syncGr(targetId, value) {
-  const el = document.getElementById(targetId);
-  if (el) el.value = value;
-  saveAll();
+function maybeRecalc() {
+  if (document.getElementById('results').style.display === 'block') {
+    calculateFinalGrade();
+  }
 }
 
 /* ============================================================
@@ -1673,7 +1670,6 @@ function applyBlankZeros() {
         badge.textContent = '✗ Sin respuesta — 0 pts';
         row.appendChild(badge);
       }
-      syncGr(item.answerId, 0);
     } else {
       scoreEl.classList.remove('locked');
       scoreEl.readOnly = false;
@@ -1697,7 +1693,13 @@ function calculateFinalGrade() {
   const autoListeningB = ['lb1','lb2','lb3','lb4','lb5','lb6','lb7'].reduce((s,n) => s + (getRadio(n) === keyLB[n] ? 1 : 0), 0);
   const autoReadingA = ['ra1','ra2','ra3','ra4','ra5','ra6'].reduce((s,n) => s + (getRadio(n) === keyRA[n] ? 1 : 0), 0);
 
-  if (!autoGeminiDone) applyBlankZeros();
+  // Bloquea en 0 los puntajes de Gemini cuya respuesta de texto está en blanco (Rule 20).
+  applyBlankZeros();
+
+  // "Listo" se determina solo por el estado actual de los campos — sin botón aparte.
+  const geminiScoresFilled = ['gr_rb_q1','gr_rb_q2','gr_rb_q3','gr_rb_q4'].every(id => g(id) !== '');
+  const rubricFilled = ['rub1','rub2','rub3','rub4'].every(n => getRadio(n) !== '');
+  autoGeminiDone = geminiScoresFilled && rubricFilled;
 
   const readingB = ['rb_q1','rb_q2','rb_q3','rb_q4'].reduce((s,id) => s + (parseFloat(g(id.replace('rb_','gr_rb_'))) || 0), 0);
   const writingTotal = ['rub1','rub2','rub3','rub4'].reduce((s,n) => s + (parseFloat(getRadio(n)) || 0), 0);
@@ -1723,41 +1725,26 @@ function calculateFinalGrade() {
         <div class="grade-number" style="color:${gradeColor}">${grade.toFixed(1)}</div>
         <div class="grade-label">Nota final (escala chilena — 60% = 4.0)</div>
       </div>`;
-    document.getElementById('geminiBlock').style.display = 'none';
-    document.getElementById('geminiDoneBanner').style.display = 'block';
     document.getElementById('partialBar').style.display = 'none';
-    document.getElementById('filterTabs').style.display = 'flex';
-    document.getElementById('feedbackSection').style.display = 'block';
-    document.getElementById('partialNote').style.display = 'none';
     document.getElementById('fbRBPart').style.display = 'block';
   } else {
     gradeContainer.innerHTML = `<div class="grade-display" style="border-color:#f59e0b;background:linear-gradient(135deg,#fffbeb,#fef9c3);">
         <div style="font-size:2.5em;margin-bottom:8px;">⏳</div>
         <div style="font-family:'DM Serif Display',serif;font-size:1.3em;color:#d97706;">Nota pendiente</div>
-        <div style="font-size:0.85em;color:#92400e;margin-top:6px;line-height:1.5;">Completa la revisión con Gemini de Reading Parte B y la rúbrica de Writing, luego haz clic en "Actualizar nota".</div>
+        <div style="font-size:0.85em;color:#92400e;margin-top:6px;line-height:1.5;">Completa la revisión con Gemini de Reading Parte B y la rúbrica de Writing — la nota se actualiza sola.</div>
         <div style="font-size:2em;color:#f59e0b;margin-top:10px;animation:bounce 1.2s infinite;">↓</div>
       </div>`;
-    document.getElementById('geminiBlock').style.display = 'block';
-    document.getElementById('geminiDoneBanner').style.display = 'none';
     document.getElementById('partialBar').style.display = 'block';
+    document.getElementById('fbRBPart').style.display = 'none';
   }
 
+  // La retroalimentación de Listening y Reading Parte A (100% autocorregidas) se muestra
+  // de inmediato, sin esperar la revisión de Gemini — solo Reading Parte B queda pendiente.
+  document.getElementById('filterTabs').style.display = 'flex';
+  document.getElementById('feedbackSection').style.display = 'block';
+  document.getElementById('partialNote').style.display = autoGeminiDone ? 'none' : 'block';
+
   buildFeedback(autoListeningA, autoListeningB, autoReadingA, readingB);
-}
-
-function updateWithGeminiScores() {
-  autoGeminiDone = true;
-  calculateFinalGrade();
-}
-
-function togglePartialFeedback() {
-  const fb = document.getElementById('feedbackSection');
-  const note = document.getElementById('partialNote');
-  const showing = fb.style.display === 'block';
-  fb.style.display = showing ? 'none' : 'block';
-  note.style.display = showing ? 'none' : 'block';
-  document.getElementById('fbRBPart').style.display = 'none';
-  document.getElementById('partialBtn').textContent = showing ? '👁 Ver retroalimentación parcial' : '🙈 Ocultar retroalimentación parcial';
 }
 
 /* ============================================================
